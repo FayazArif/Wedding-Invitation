@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Cinematic golden wedding stage">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="24%" r="62%">
+      <stop offset="0" stop-color="#ffe7a0" stop-opacity=".78"/>
+      <stop offset=".34" stop-color="#d9a441" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#7a4b13"/>
+      <stop offset=".26" stop-color="#ffe7a0"/>
+      <stop offset=".52" stop-color="#c9872a"/>
+      <stop offset=".78" stop-color="#fff4bd"/>
+      <stop offset="1" stop-color="#825116"/>
+    </linearGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="1000" fill="#070504"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <path d="M0 210C240 90 412 92 610 190c132 66 256 69 380 0 204-113 388-93 610 28v782H0Z" fill="#130d09" opacity=".72"/>
+  <g opacity=".36" filter="url(#soft)">
+    <circle cx="218" cy="170" r="70" fill="#d9a441"/>
+    <circle cx="1380" cy="194" r="82" fill="#d9a441"/>
+    <circle cx="800" cy="150" r="102" fill="#fff0b4"/>
+  </g>
+  <g fill="none" stroke="url(#gold)" stroke-width="4" opacity=".74">
+    <path d="M132 858C322 656 492 562 640 578c112 12 160 92 160 92s50-80 162-92c148-16 318 78 508 280"/>
+    <path d="M248 892c168-158 328-230 480-214 45 5 72 18 72 18s28-13 72-18c152-16 312 56 480 214"/>
+    <path d="M800 270v422"/>
+  </g>
+  <g opacity=".88">
+    <path d="M574 714c28-116 94-178 172-178 22 0 40 6 54 16 14-10 32-16 54-16 78 0 144 62 172 178z" fill="#100b08"/>
+    <path d="M612 700c34-74 80-111 137-111 26 0 43 10 51 22 8-12 25-22 51-22 57 0 103 37 137 111z" fill="#22150d"/>
+    <path d="M746 530c0-38 24-70 54-70s54 32 54 70c0 42-24 78-54 78s-54-36-54-78z" fill="#1f140d"/>
+  </g>
+  <g fill="#ffe7a0" opacity=".64">
+    <circle cx="282" cy="310" r="3"/>
+    <circle cx="410" cy="218" r="2"/>
+    <circle cx="1196" cy="330" r="3"/>
+    <circle cx="1328" cy="266" r="2"/>
+    <circle cx="704" cy="226" r="2"/>
+    <circle cx="910" cy="246" r="3"/>
+    <circle cx="1028" cy="158" r="2"/>
+  </g>
+</svg>

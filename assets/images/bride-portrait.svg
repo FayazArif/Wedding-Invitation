@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" role="img" aria-label="Bride portrait placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#421414"/><stop offset=".54" stop-color="#090605"/><stop offset="1" stop-color="#d9a441"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="28%" r="46%">
+      <stop offset="0" stop-color="#fff0b4" stop-opacity=".46"/><stop offset="1" stop-color="#fff0b4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1125" fill="url(#bg)"/>
+  <rect width="900" height="1125" fill="url(#halo)"/>
+  <path d="M290 826c28-266 82-398 160-398s132 132 160 398z" fill="#230f10"/>
+  <circle cx="450" cy="316" r="112" fill="#2a1710"/>
+  <path d="M326 392c34 82 74 124 124 124s90-42 124-124c-24 168-66 252-124 252s-100-84-124-252z" fill="#5d1d1d"/>
+  <path d="M240 878h420v96H240z" fill="#0d0907"/>
+  <g fill="none" stroke="#ffe7a0" stroke-opacity=".62" stroke-width="3">
+    <path d="M220 230c94-112 202-148 324-108M680 238c-82-70-170-96-264-78"/>
+    <path d="M294 824c96 44 204 44 312 0"/>
+  </g>
+  <text x="450" y="1022" text-anchor="middle" fill="#ffe7a0" font-family="Georgia,serif" font-size="54">Sabreen</text>
+</svg>

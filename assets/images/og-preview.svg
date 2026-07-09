@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Fayaz Arif and Sabreen wedding invitation preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070504"/><stop offset=".55" stop-color="#1b1009"/><stop offset="1" stop-color="#070504"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#8a5719"/><stop offset=".35" stop-color="#ffe7a0"/><stop offset=".65" stop-color="#d9a441"/><stop offset="1" stop-color="#fff3bd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="600" cy="310" r="250" fill="#d9a441" opacity=".12"/>
+  <rect x="60" y="60" width="1080" height="510" rx="18" fill="none" stroke="url(#gold)" stroke-width="3"/>
+  <text x="600" y="178" text-anchor="middle" fill="#ffe7a0" font-family="Georgia,serif" font-size="38" letter-spacing="8">WEDDING INVITATION</text>
+  <text x="600" y="312" text-anchor="middle" fill="url(#gold)" font-family="Georgia,serif" font-size="96">Fayaz Arif &amp; Sabreen</text>
+  <text x="600" y="414" text-anchor="middle" fill="#fff7e7" font-family="Georgia,serif" font-size="42">17 October 2026 · 12:00 PM</text>
+  <text x="600" y="496" text-anchor="middle" fill="#cdbf9e" font-family="Arial,sans-serif" font-size="25">Join us for the celebration</text>
+</svg>

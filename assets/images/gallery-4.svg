@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" role="img" aria-label="Luxury wedding stage">
+  <rect width="720" height="960" fill="#0b0705"/>
+  <path d="M0 760h720v200H0z" fill="#160e09"/>
+  <g fill="none" stroke="#d9a441" stroke-width="8" opacity=".7">
+    <path d="M100 760V250c180-120 340-120 520 0v510"/>
+    <path d="M170 760V322c128-84 252-84 380 0v438"/>
+    <path d="M246 760V406c78-52 150-52 228 0v354"/>
+  </g>
+  <circle cx="360" cy="258" r="66" fill="#ffe7a0" opacity=".44"/>
+</svg>

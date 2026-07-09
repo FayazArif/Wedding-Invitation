@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" role="img" aria-label="Wedding rings and lights">
+  <rect width="720" height="960" fill="#110907"/>
+  <g fill="none" stroke="#ffe7a0" stroke-width="34" opacity=".78">
+    <circle cx="306" cy="472" r="128"/>
+    <circle cx="424" cy="472" r="128"/>
+  </g>
+  <g fill="#d9a441" opacity=".3">
+    <circle cx="128" cy="160" r="42"/><circle cx="594" cy="220" r="64"/><circle cx="166" cy="782" r="72"/><circle cx="560" cy="760" r="40"/>
+  </g>
+</svg>
