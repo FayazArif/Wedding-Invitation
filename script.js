@@ -12,22 +12,38 @@ const countdown = document.getElementById("countdown");
 
 let musicReady = false;
 let scratchRevealed = false;
+let hasOpenedInvite = false;
 
 function openInvitation() {
-  if (window.gsap) {
-    window.gsap.to("#openingCover", {
-      yPercent: -100,
-      opacity: 0,
-      duration: 1.25,
-      ease: "power4.inOut",
-      onComplete: () => body.classList.add("invite-open")
-    });
-  } else {
-    body.classList.add("invite-open");
-  }
+  if (hasOpenedInvite) return;
+  hasOpenedInvite = true;
 
-  invitation.scrollIntoView({ behavior: "smooth", block: "start" });
+  body.classList.add("card-opening");
   tryPlayMusic();
+
+  window.setTimeout(() => {
+    body.classList.add("names-revealed");
+  }, 2600);
+
+  window.setTimeout(() => {
+    burstPetals(40);
+  }, 3200);
+
+  window.setTimeout(() => {
+    if (window.gsap) {
+      window.gsap.to("#openingCover", {
+        yPercent: -100,
+        opacity: 0,
+        duration: 1.05,
+        ease: "power4.inOut",
+        onComplete: () => body.classList.add("invite-open")
+      });
+    } else {
+      body.classList.add("invite-open");
+    }
+
+    invitation.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 6200);
 }
 
 async function tryPlayMusic() {
@@ -118,23 +134,23 @@ function initScratchCard() {
     const rect = scratchCanvas.getBoundingClientRect();
     setCanvasSize();
     const gradient = ctx.createLinearGradient(0, 0, rect.width, rect.height);
-    gradient.addColorStop(0, "#7b4a11");
-    gradient.addColorStop(0.28, "#ffe7a0");
-    gradient.addColorStop(0.5, "#b9812a");
-    gradient.addColorStop(0.72, "#fff7cc");
-    gradient.addColorStop(1, "#8f5717");
+    gradient.addColorStop(0, "#ff8fbd");
+    gradient.addColorStop(0.28, "#fff7fb");
+    gradient.addColorStop(0.5, "#f05f9f");
+    gradient.addColorStop(0.72, "#ffd7e7");
+    gradient.addColorStop(1, "#c71863");
 
     ctx.globalCompositeOperation = "source-over";
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, rect.width, rect.height);
-    ctx.fillStyle = "rgba(7, 5, 4, 0.26)";
+    ctx.fillStyle = "rgba(255, 255, 255, 0.22)";
     ctx.fillRect(0, 0, rect.width, rect.height);
 
-    ctx.fillStyle = "rgba(255, 247, 231, 0.92)";
+    ctx.fillStyle = "rgba(75, 23, 48, 0.82)";
     ctx.font = "700 18px Cinzel, serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText("SCRATCH TO REVEAL", rect.width / 2, rect.height / 2);
+    ctx.fillText("SCRATCH WITH LOVE", rect.width / 2, rect.height / 2);
   }
 
   function scratchAt(event) {
@@ -238,11 +254,18 @@ function initGoldParticles() {
       }
 
       ctx.beginPath();
-      ctx.fillStyle = `rgba(255, 220, 138, ${particle.alpha})`;
-      ctx.shadowColor = "rgba(255, 220, 138, 0.7)";
+      ctx.fillStyle = `rgba(240, 95, 159, ${particle.alpha})`;
+      ctx.shadowColor = "rgba(255, 128, 182, 0.7)";
       ctx.shadowBlur = 10;
-      ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+      ctx.save();
+      ctx.translate(particle.x, particle.y);
+      ctx.rotate(-Math.PI / 4);
+      ctx.fillRect(-particle.size, -particle.size, particle.size * 2, particle.size * 2);
+      ctx.beginPath();
+      ctx.arc(0, -particle.size, particle.size, 0, Math.PI * 2);
+      ctx.arc(particle.size, 0, particle.size, 0, Math.PI * 2);
       ctx.fill();
+      ctx.restore();
     });
     requestAnimationFrame(draw);
   }
@@ -290,7 +313,7 @@ function initWishesForm() {
         body: JSON.stringify({ name, wish })
       });
 
-      hint.textContent = "JazakAllahu Khairan! Your wishes have been received.";
+      hint.textContent = "Thank you! Your wishes have been received.";
       hint.classList.add("is-success");
       form.reset();
       burstPetals(28);

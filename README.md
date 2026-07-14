@@ -1,12 +1,12 @@
 # Fayaz Arif & Sabreen Wedding Invitation
 
-A cinematic, mobile-responsive wedding invitation website with a black and gold luxury theme.
+A cinematic, mobile-responsive wedding invitation website with a white and pink romantic heart theme.
 
 ## Files
 
 - `index.html` - page structure, Open Graph metadata, and invitation content
-- `style.css` - cinematic theme, responsive layout, gold shine, glass panels, petals
-- `script.js` - tap-to-open, countdown, scratch reveal, particles, music, reveal animations
+- `style.css` - romantic theme, responsive layout, pink shine, glass panels, and hearts
+- `script.js` - tap-to-open, countdown, scratch reveal, heart particles, music, reveal animations
 - `assets/images/` - lightweight visual placeholders for hero, couple portraits, gallery, venue, and preview
 - `assets/music/` - place `wedding-music.mp3` here
 
@@ -25,7 +25,7 @@ For background music, add:
 
 `assets/music/wedding-music.mp3`
 
-Update the venue text in `index.html` if you want the exact hall name and address shown on the page. The Google Maps button is already linked to:
+Update the venue text in `index.html` if you want the exact hall name and address shown on the page. The venue section includes an embedded Google Maps view for:
 
 `https://maps.app.goo.gl/T9LLrzE86vH5gifKA`
 

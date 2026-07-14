@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" role="img" aria-label="Golden wedding decor">
-  <rect width="720" height="960" fill="#090605"/>
-  <circle cx="360" cy="270" r="180" fill="#d9a441" opacity=".16"/>
-  <g fill="none" stroke="#d9a441" stroke-width="5" opacity=".7">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" role="img" aria-label="Pink wedding decor">
+  <rect width="720" height="960" fill="#fff8fb"/>
+  <circle cx="360" cy="270" r="190" fill="#ffd7e7"/>
+  <g fill="none" stroke="#f05f9f" stroke-width="6" opacity=".48">
     <path d="M110 760c80-240 164-360 250-360s170 120 250 360"/>
     <path d="M160 760c62-160 128-240 200-240s138 80 200 240"/>
   </g>
-  <g fill="#ffe7a0" opacity=".78"><circle cx="190" cy="250" r="8"/><circle cx="530" cy="240" r="8"/><circle cx="360" cy="150" r="10"/></g>
+  <path d="M360 312c-42-46-116-16-116 44 0 70 116 124 116 124s116-54 116-124c0-60-74-90-116-44z" fill="#f05f9f" opacity=".48"/>
 </svg>

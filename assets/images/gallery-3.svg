@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" role="img" aria-label="Floral wedding details">
-  <rect width="720" height="960" fill="#080504"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" role="img" aria-label="Pink floral wedding details">
+  <rect width="720" height="960" fill="#fff8fb"/>
   <g transform="translate(360 480)">
-    <g fill="#d9a441" opacity=".76">
+    <g fill="#ff9ec8" opacity=".76">
       <ellipse rx="48" ry="160" transform="rotate(0) translate(0 -118)"/>
       <ellipse rx="48" ry="160" transform="rotate(45) translate(0 -118)"/>
       <ellipse rx="48" ry="160" transform="rotate(90) translate(0 -118)"/>
@@ -11,6 +11,7 @@
       <ellipse rx="48" ry="160" transform="rotate(270) translate(0 -118)"/>
       <ellipse rx="48" ry="160" transform="rotate(315) translate(0 -118)"/>
     </g>
-    <circle r="74" fill="#fff0b4"/>
+    <circle r="74" fill="#ffffff"/>
+    <circle r="38" fill="#f05f9f" opacity=".52"/>
   </g>
 </svg>

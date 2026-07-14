@@ -1,46 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Cinematic golden wedding stage">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Romantic white and pink wedding backdrop">
   <defs>
-    <radialGradient id="glow" cx="50%" cy="24%" r="62%">
-      <stop offset="0" stop-color="#ffe7a0" stop-opacity=".78"/>
-      <stop offset=".34" stop-color="#d9a441" stop-opacity=".28"/>
-      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    <radialGradient id="glow" cx="50%" cy="28%" r="68%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".48" stop-color="#ffd7e7"/>
+      <stop offset="1" stop-color="#fff7fb"/>
     </radialGradient>
-    <linearGradient id="gold" x1="0" x2="1">
-      <stop offset="0" stop-color="#7a4b13"/>
-      <stop offset=".26" stop-color="#ffe7a0"/>
-      <stop offset=".52" stop-color="#c9872a"/>
-      <stop offset=".78" stop-color="#fff4bd"/>
-      <stop offset="1" stop-color="#825116"/>
+    <linearGradient id="pink" x1="0" x2="1">
+      <stop offset="0" stop-color="#f05f9f"/>
+      <stop offset=".5" stop-color="#ffd1e3"/>
+      <stop offset="1" stop-color="#c71863"/>
     </linearGradient>
-    <filter id="soft">
-      <feGaussianBlur stdDeviation="10"/>
-    </filter>
   </defs>
-  <rect width="1600" height="1000" fill="#070504"/>
   <rect width="1600" height="1000" fill="url(#glow)"/>
-  <path d="M0 210C240 90 412 92 610 190c132 66 256 69 380 0 204-113 388-93 610 28v782H0Z" fill="#130d09" opacity=".72"/>
-  <g opacity=".36" filter="url(#soft)">
-    <circle cx="218" cy="170" r="70" fill="#d9a441"/>
-    <circle cx="1380" cy="194" r="82" fill="#d9a441"/>
-    <circle cx="800" cy="150" r="102" fill="#fff0b4"/>
+  <g opacity=".34">
+    <circle cx="210" cy="170" r="150" fill="#ff9ec8"/>
+    <circle cx="1340" cy="230" r="180" fill="#ffc1d9"/>
+    <circle cx="830" cy="126" r="120" fill="#ffffff"/>
   </g>
-  <g fill="none" stroke="url(#gold)" stroke-width="4" opacity=".74">
-    <path d="M132 858C322 656 492 562 640 578c112 12 160 92 160 92s50-80 162-92c148-16 318 78 508 280"/>
-    <path d="M248 892c168-158 328-230 480-214 45 5 72 18 72 18s28-13 72-18c152-16 312 56 480 214"/>
-    <path d="M800 270v422"/>
+  <g fill="#f05f9f" opacity=".42">
+    <path d="M220 370c-46-50-128-18-128 48 0 76 128 132 128 132s128-56 128-132c0-66-82-98-128-48z"/>
+    <path d="M1324 376c-34-38-96-14-96 36 0 58 96 100 96 100s96-42 96-100c0-50-62-74-96-36z"/>
+    <path d="M806 626c-62-68-176-24-176 66 0 104 176 184 176 184s176-80 176-184c0-90-114-134-176-66z"/>
   </g>
-  <g opacity=".88">
-    <path d="M574 714c28-116 94-178 172-178 22 0 40 6 54 16 14-10 32-16 54-16 78 0 144 62 172 178z" fill="#100b08"/>
-    <path d="M612 700c34-74 80-111 137-111 26 0 43 10 51 22 8-12 25-22 51-22 57 0 103 37 137 111z" fill="#22150d"/>
-    <path d="M746 530c0-38 24-70 54-70s54 32 54 70c0 42-24 78-54 78s-54-36-54-78z" fill="#1f140d"/>
+  <g fill="none" stroke="url(#pink)" stroke-width="5" opacity=".58">
+    <path d="M140 820c190-180 392-260 604-238 32 4 56 10 56 10s24-6 56-10c212-22 414 58 604 238"/>
+    <path d="M250 862c158-112 326-158 504-138 28 3 46 8 46 8s18-5 46-8c178-20 346 26 504 138"/>
+    <path d="M800 270v420"/>
   </g>
-  <g fill="#ffe7a0" opacity=".64">
-    <circle cx="282" cy="310" r="3"/>
-    <circle cx="410" cy="218" r="2"/>
-    <circle cx="1196" cy="330" r="3"/>
-    <circle cx="1328" cy="266" r="2"/>
-    <circle cx="704" cy="226" r="2"/>
-    <circle cx="910" cy="246" r="3"/>
-    <circle cx="1028" cy="158" r="2"/>
+  <g fill="#c71863" opacity=".54">
+    <circle cx="410" cy="260" r="5"/>
+    <circle cx="1160" cy="290" r="5"/>
+    <circle cx="620" cy="178" r="4"/>
+    <circle cx="1010" cy="184" r="4"/>
   </g>
 </svg>

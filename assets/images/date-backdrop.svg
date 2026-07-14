@@ -1,24 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Golden wedding date backdrop">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Pink romantic wedding date backdrop">
   <defs>
-    <radialGradient id="r" cx="50%" cy="45%" r="70%">
-      <stop offset="0" stop-color="#3a2512"/>
-      <stop offset=".6" stop-color="#140d09"/>
-      <stop offset="1" stop-color="#060403"/>
+    <radialGradient id="r" cx="50%" cy="45%" r="72%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".58" stop-color="#ffe4ef"/>
+      <stop offset="1" stop-color="#fff8fb"/>
     </radialGradient>
-    <linearGradient id="g" x1="0" x2="1">
-      <stop offset="0" stop-color="#8a5719"/>
-      <stop offset=".5" stop-color="#ffe7a0"/>
-      <stop offset="1" stop-color="#8a5719"/>
+    <linearGradient id="p" x1="0" x2="1">
+      <stop offset="0" stop-color="#ff9ec8"/>
+      <stop offset=".5" stop-color="#c71863"/>
+      <stop offset="1" stop-color="#ff9ec8"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="700" fill="url(#r)"/>
-  <g fill="none" stroke="url(#g)" opacity=".58">
-    <ellipse cx="600" cy="350" rx="420" ry="214" stroke-width="2"/>
-    <ellipse cx="600" cy="350" rx="330" ry="162" stroke-width="1"/>
-    <path d="M190 350h820M600 90v520"/>
-    <path d="M240 160c164 112 294 112 360 0 66 112 196 112 360 0M240 540c164-112 294-112 360 0 66-112 196-112 360 0"/>
+  <g fill="none" stroke="url(#p)" opacity=".35">
+    <ellipse cx="600" cy="350" rx="420" ry="214" stroke-width="3"/>
+    <ellipse cx="600" cy="350" rx="330" ry="162" stroke-width="2"/>
+    <path d="M210 350h780M600 100v500"/>
   </g>
-  <g fill="#d9a441" opacity=".32">
-    <circle cx="180" cy="160" r="5"/><circle cx="1020" cy="540" r="5"/><circle cx="990" cy="154" r="3"/><circle cx="220" cy="534" r="3"/>
+  <g fill="#f05f9f" opacity=".24">
+    <path d="M200 164c-24-26-66-10-66 24 0 40 66 70 66 70s66-30 66-70c0-34-42-50-66-24z"/>
+    <path d="M998 454c-24-26-66-10-66 24 0 40 66 70 66 70s66-30 66-70c0-34-42-50-66-24z"/>
   </g>
 </svg>

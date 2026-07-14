@@ -1,21 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" role="img" aria-label="Groom portrait placeholder">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2a170d"/><stop offset=".55" stop-color="#090605"/><stop offset="1" stop-color="#b9812a"/>
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#ffe1ed"/><stop offset="1" stop-color="#ffc1d9"/>
     </linearGradient>
-    <radialGradient id="halo" cx="50%" cy="28%" r="46%">
-      <stop offset="0" stop-color="#ffe7a0" stop-opacity=".44"/><stop offset="1" stop-color="#ffe7a0" stop-opacity="0"/>
-    </radialGradient>
   </defs>
   <rect width="900" height="1125" fill="url(#bg)"/>
-  <rect width="900" height="1125" fill="url(#halo)"/>
-  <circle cx="450" cy="314" r="116" fill="#25160e"/>
-  <path d="M298 846c20-216 82-324 152-324s132 108 152 324z" fill="#16100d"/>
-  <path d="M328 858c42-130 82-194 122-194s80 64 122 194z" fill="#32200f"/>
-  <path d="M264 868h372v92H264z" fill="#0d0907"/>
-  <g fill="none" stroke="#ffe7a0" stroke-opacity=".58" stroke-width="3">
-    <path d="M158 180c86-62 164-80 234-54M742 180c-86-62-164-80-234-54"/>
-    <path d="M206 934h488"/>
+  <circle cx="450" cy="300" r="178" fill="#fff7fb"/>
+  <circle cx="450" cy="314" r="116" fill="#8a4962" opacity=".34"/>
+  <path d="M298 846c20-216 82-324 152-324s132 108 152 324z" fill="#f05f9f" opacity=".52"/>
+  <path d="M328 858c42-130 82-194 122-194s80 64 122 194z" fill="#ffffff" opacity=".72"/>
+  <path d="M264 868h372v92H264z" fill="#ffd7e7"/>
+  <g fill="#f05f9f" opacity=".34">
+    <path d="M176 180c-28-30-76-10-76 30 0 46 76 82 76 82s76-36 76-82c0-40-48-60-76-30z"/>
+    <path d="M724 184c-28-30-76-10-76 30 0 46 76 82 76 82s76-36 76-82c0-40-48-60-76-30z"/>
   </g>
-  <text x="450" y="1022" text-anchor="middle" fill="#ffe7a0" font-family="Georgia,serif" font-size="54">Fayaz Arif</text>
+  <text x="450" y="1022" text-anchor="middle" fill="#c71863" font-family="Georgia,serif" font-size="54">Fayaz Arif</text>
 </svg>

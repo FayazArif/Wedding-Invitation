@@ -1,13 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-label="Wedding venue card backdrop">
-  <rect width="900" height="700" fill="#090605"/>
-  <radialGradient id="v" cx="50%" cy="35%" r="62%">
-    <stop offset="0" stop-color="#d9a441" stop-opacity=".45"/>
-    <stop offset="1" stop-color="#d9a441" stop-opacity="0"/>
-  </radialGradient>
-  <rect width="900" height="700" fill="url(#v)"/>
-  <g fill="none" stroke="#ffe7a0" stroke-opacity=".48" stroke-width="4">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-label="Romantic wedding venue card backdrop">
+  <rect width="900" height="700" fill="#fff8fb"/>
+  <circle cx="450" cy="235" r="220" fill="#ffd7e7"/>
+  <g fill="none" stroke="#f05f9f" stroke-opacity=".36" stroke-width="5">
     <path d="M110 590C220 332 334 204 450 204s230 128 340 386"/>
     <path d="M190 590c82-174 168-260 260-260s178 86 260 260"/>
-    <path d="M450 110v470"/>
+  </g>
+  <g fill="#f05f9f" opacity=".3">
+    <path d="M448 280c-38-42-106-14-106 42 0 66 106 116 106 116s106-50 106-116c0-56-68-84-106-42z"/>
   </g>
 </svg>
