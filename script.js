@@ -23,11 +23,11 @@ function openInvitation() {
 
   window.setTimeout(() => {
     body.classList.add("names-revealed");
-  }, 2600);
+  }, 1500);
 
   window.setTimeout(() => {
     burstPetals(40);
-  }, 3200);
+  }, 2300);
 
   window.setTimeout(() => {
     if (window.gsap) {
