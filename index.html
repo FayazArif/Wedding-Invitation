@@ -38,23 +38,35 @@
       <section class="opening-cover" id="openingCover" aria-label="Open wedding invitation">
         <div class="cover-media"></div>
         <div class="cover-vignette"></div>
-        <div class="opening-card" aria-hidden="true">
-          <div class="card-door card-door-left"></div>
-          <div class="card-door card-door-right"></div>
-          <div class="card-inner-glow"></div>
+        <div class="stage-set" aria-hidden="true">
+          <div class="stage-backdrop"></div>
+          <div class="curtain curtain-left">
+            <img class="curtain-image" src="assets/images/left.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="curtain curtain-right">
+            <img class="curtain-image" src="assets/images/right.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="curtain-sheer"></div>
+          <div class="spotlight"></div>
+          <div class="stage-floor"></div>
+          <div class="monogram-crest" aria-hidden="true">
+            <img class="fs-logo" src="assets/images/fs_logo.png" alt="" />
+            <p class="logo-caption">Wedding Invitation</p>
+          </div>
         </div>
         <div class="cover-content">
-          <div class="heart-mark" aria-hidden="true"></div>
-          <p class="bismillah">A celebration of love</p>
-          <p class="eyebrow">Wedding Invitation</p>
+          <p class="cover-topline">The Wedding Invititation.</p>
           <h1 class="gold-title">
-            <span>Fayaz Arif</span>
+            <span>FAYAZ ARIF</span>
             <em>&amp;</em>
-            <span>Sabreen</span>
+            <span>SABREEN</span>
           </h1>
+          <p class="cover-copy">
+            Everything a printed card or WhatsApp video can't be: immersive, instant, and unmistakably yours.
+          </p>
           <button class="open-button" id="openInvite" type="button" aria-label="Open invitation card">
-            <span class="button-glow"></span>
-            <span>Open The Card</span>
+            <span class="open-label">Tap to Open</span>
+            <img class="open-heart" src="assets/images/heart.png" alt="" aria-hidden="true" />
           </button>
         </div>
         <div class="scroll-cue" aria-hidden="true">
@@ -149,9 +161,7 @@
           </div>
           <div class="scratch-wrap">
             <div class="date-card">
-              <span class="date-month">October</span>
-              <strong>17</strong>
-              <span class="date-year">2026 - 12:00 PM</span>
+              <span class="reveal-date">17.10.2026</span>
             </div>
             <canvas
               id="scratchCanvas"

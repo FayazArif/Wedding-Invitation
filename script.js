@@ -18,16 +18,16 @@ function openInvitation() {
   if (hasOpenedInvite) return;
   hasOpenedInvite = true;
 
-  body.classList.add("card-opening");
+  body.classList.add("curtain-opening");
   tryPlayMusic();
 
   window.setTimeout(() => {
     body.classList.add("names-revealed");
-  }, 1500);
+  }, 2100);
 
   window.setTimeout(() => {
-    burstPetals(40);
-  }, 2300);
+    burstPetals(42);
+  }, 2100);
 
   window.setTimeout(() => {
     if (window.gsap) {
@@ -36,14 +36,20 @@ function openInvitation() {
         opacity: 0,
         duration: 1.05,
         ease: "power4.inOut",
-        onComplete: () => body.classList.add("invite-open")
+        onComplete: () => {
+          body.classList.remove("curtain-opening");
+          body.classList.add("invite-open");
+          body.classList.add("names-revealed");
+        }
       });
     } else {
+      body.classList.remove("curtain-opening");
       body.classList.add("invite-open");
+      body.classList.add("names-revealed");
     }
 
     invitation.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, 6200);
+  }, 5600);
 }
 
 async function tryPlayMusic() {
