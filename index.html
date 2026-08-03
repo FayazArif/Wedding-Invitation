@@ -51,6 +51,7 @@
           <div class="stage-floor"></div>
           <div class="monogram-crest" aria-hidden="true">
             <img class="fs-logo" src="assets/images/fs_logo.png" alt="" />
+            <p class="logo-name">Fayaz Arif & Sabreen</p>
             <p class="logo-caption">Wedding Invitation</p>
           </div>
         </div>
@@ -62,7 +63,7 @@
             <span>SABREEN</span>
           </h1>
           <p class="cover-copy">
-            Everything a printed card or WhatsApp video can't be: immersive, instant, and unmistakably yours.
+            Join us for an intimate celebration of love, family, and the beginning of our forever.
           </p>
           <button class="open-button" id="openInvite" type="button" aria-label="Open invitation card">
             <span class="open-label">Tap to Open</span>
@@ -106,10 +107,9 @@
             <div class="details-card">
               <h3>Groom's Family</h3>
               <ul class="family-list">
-                <li><strong>Parents:</strong> Abid TP (late) and Shamila Abid</li>
+                <li><strong>Parents:</strong> A. Mohammed Hussain & M. Ramlath Nisha</li>
                 <li>
-                  <strong>Grandparents:</strong> AbdulRahman Kutty (late) and Pathutty (late),
-                  Kunjhi Kadhar Haji (late) and Pathumma
+                  <strong>Grandparents:</strong> AbdulRahman (late) and AbdulSalam (late)
                 </li>
               </ul>
             </div>
@@ -117,10 +117,9 @@
             <div class="details-card">
               <h3>Bride's Family</h3>
               <ul class="family-list">
-                <li><strong>Parents:</strong> Thajudheen and Ruksana Sulthana</li>
+                <li><strong>Parents:</strong> A. Sikkandar Basha & M. Parijan</li>
                 <li>
-                  <strong>Grandparents:</strong> Abdukoya (late) and Arifa (late), Mohd Iqbal and
-                  Ratheela Beevi
+                  <strong>Grandparents:</strong> Abdukoya (late) and Arifa (late)
                 </li>
               </ul>
             </div>
@@ -129,22 +128,10 @@
           <div class="details-card accent">
             <p class="details-question">Will you be joining us for the special moment?</p>
             <div class="rsvp-links">
-              <a
-                class="rsvp-link"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSezYLkffvcaXpGoe_kJbBcfRYFMkR7ukBeuBFS-4o12QA_-eg/viewform?usp=publish-editor"
-                target="_blank"
-                rel="noopener"
-              >
-                Yes!
-              </a>
-              <span class="rsvp-link secondary">No</span>
+              <button type="button" class="rsvp-link" id="rsvpYes">Yes!</button>
+              <button type="button" class="rsvp-link secondary" id="rsvpNo">No</button>
             </div>
-            <p class="details-note">With Best Wishes from:</p>
-            <p class="details-signature">
-              Groom: S/o Abid TP (late) and Shamila Abid<br />
-              Bride: D/o Thajudheen and Ruksana Sulthana
-            </p>
-            
+
             <p class="details-footer">
               Our families look forward to celebrating these beautiful wedding moments with you. Your
               presence and blessings mean a lot to our names.
@@ -152,6 +139,28 @@
           </div>
         </div>
       </section>
+      <div class="modal-backdrop rsvp-modal" id="rsvpModal" aria-hidden="true">
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="rsvpModalTitle">
+          <button class="modal-close" id="closeRsvpModal" type="button" aria-label="Close RSVP form">×</button>
+          <p class="eyebrow">RSVP</p>
+          <h2 id="rsvpModalTitle">Share your arrival details</h2>
+          <p class="modal-copy">Tell us your name and how many guests will join the celebration.</p>
+          <form class="wishes-form" id="rsvpForm" novalidate>
+            <label class="field">
+              <span>Your name</span>
+              <input type="text" id="rsvpName" name="rsvpName" placeholder="Enter your name" autocomplete="name" required />
+            </label>
+            <label class="field">
+              <span>Members attending</span>
+              <input type="number" id="rsvpMembers" name="rsvpMembers" placeholder="Number of people" min="1" required />
+            </label>
+            <button type="submit" class="map-button wishes-submit">
+              Confirm RSVP
+            </button>
+            <p class="wishes-hint" id="rsvpHint" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
 
       <section class="scratch-section reveal-panel" aria-labelledby="scratchTitle">
         <div class="section-inner">
@@ -189,8 +198,33 @@
         </div>
       </section>
 
+      <section class="events-section reveal-panel" aria-labelledby="eventsTitle">
+        <div class="section-inner narrow">
+          <div class="section-heading">
+            <p class="eyebrow">Wedding Events</p>
+            <h2 id="eventsTitle">Moments leading up to the celebration</h2>
+          </div>
+          <div class="events-grid">
+            <article class="event-card">
+              <div class="event-marker"><span>01</span></div>
+              <span class="event-label">Nikkah</span>
+              <h3>Nikkah Ceremony</h3>
+              <p class="event-time">17th October 2026 · 12 PM onwards</p>
+              <p>A sacred union celebrated with blessings and family.</p>
+            </article>
+            <article class="event-card">
+              <div class="event-marker"><span>02</span></div>
+              <span class="event-label">Valima</span>
+              <h3>Valima Feast</h3>
+              <p class="event-time">17th October 2026 · 1 PM onwards</p>
+              <p>A regal feast in celebration of the newlyweds.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="venue-section reveal-panel" aria-labelledby="venueTitle">
-        <div class="section-inner venue-layout">
+        <div class="section-inner narrow">
           <div>
             <p class="eyebrow">Venue</p>
             <h2 id="venueTitle">Join us for the wedding celebration</h2>
@@ -206,11 +240,6 @@
                 allowfullscreen
               ></iframe>
             </figure>
-          </div>
-          <div class="venue-card" aria-label="Wedding event details">
-            <span>Wedding Celebration</span>
-            <strong>17 October 2026</strong>
-            <p>12:00 PM onwards</p>
           </div>
         </div>
       </section>

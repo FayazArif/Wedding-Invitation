@@ -284,7 +284,7 @@ function initGoldParticles() {
 
 // Paste your Google Apps Script Web App URL here (ends with /exec).
 // See the setup steps shared with you to create it.
-const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbywp4e5PlvREhxvWnDSWolOxlN5uknKnLvCiv7wz3jwR-ZU-eaF6BvbF8KZ14jQMj319w/exec";
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxfKHEd8Woic55CO1oIgq8AMBKTVjbBxwV2bF1l_uOFRHNwjiy1WkZ0E9IWY-rwvzMKZA/exec";
 
 function initWishesForm() {
   const form = document.getElementById("wishesForm");
@@ -331,12 +331,90 @@ function initWishesForm() {
   });
 }
 
+function openRsvpModal() {
+  const modal = document.getElementById("rsvpModal");
+  if (!modal) return;
+  modal.classList.add("is-open");
+  body.classList.add("modal-open");
+  modal.setAttribute("aria-hidden", "false");
+  const nameInput = document.getElementById("rsvpName");
+  nameInput?.focus();
+}
+
+function closeRsvpModal() {
+  const modal = document.getElementById("rsvpModal");
+  if (!modal) return;
+  modal.classList.remove("is-open");
+  body.classList.remove("modal-open");
+  modal.setAttribute("aria-hidden", "true");
+}
+
+function initRsvpModal() {
+  const yesButton = document.getElementById("rsvpYes");
+  const noButton = document.getElementById("rsvpNo");
+  const closeButton = document.getElementById("closeRsvpModal");
+  const modal = document.getElementById("rsvpModal");
+  const form = document.getElementById("rsvpForm");
+  if (!modal || !form || !yesButton || !closeButton) return;
+
+  yesButton.addEventListener("click", openRsvpModal);
+  noButton?.addEventListener("click", closeRsvpModal);
+  closeButton.addEventListener("click", closeRsvpModal);
+  modal.addEventListener("click", event => {
+    if (event.target === modal) closeRsvpModal();
+  });
+
+  form.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const nameInput = document.getElementById("rsvpName");
+    const membersInput = document.getElementById("rsvpMembers");
+    const hint = document.getElementById("rsvpHint");
+    const submitBtn = form.querySelector(".wishes-submit");
+
+    if (!nameInput || !membersInput || !hint || !submitBtn) return;
+
+    const name = nameInput.value.trim();
+    const members = membersInput.value.trim();
+
+    if (!name || !members || Number(members) < 1) {
+      hint.textContent = "Please enter a valid name and guest count.";
+      hint.classList.remove("is-success");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    hint.classList.remove("is-success");
+    hint.textContent = "Sending your RSVP...";
+
+    try {
+      await fetch(SHEET_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ type: "rsvp", name, members })
+      });
+
+      hint.textContent = "Thank you! Your RSVP has been received.";
+      hint.classList.add("is-success");
+      form.reset();
+      burstPetals(24);
+      window.setTimeout(closeRsvpModal, 1200);
+    } catch {
+      hint.textContent = "Sorry, something went wrong. Please try again.";
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+}
+
 openInvite.addEventListener("click", openInvitation);
 musicToggle.addEventListener("click", toggleMusic);
 document.addEventListener("pointerdown", tryPlayMusic, { once: true });
 
 initRevealAnimations();
 initWishesForm();
+initRsvpModal();
 initScratchCard();
 initGoldParticles();
 updateCountdown();

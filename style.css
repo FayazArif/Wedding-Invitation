@@ -35,6 +35,11 @@ body {
   overflow-x: hidden;
 }
 
+body:not(.invite-open) {
+  overflow: hidden;
+  height: 100vh;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -265,11 +270,25 @@ img {
   margin-top: 8px;
   color: var(--gold-bright);
   font-family: "Cinzel", serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  /*text-transform: uppercase;*/
   text-align: center;
   text-shadow: 0 0 10px rgba(247, 227, 147, 0.12);
+}
+
+.monogram-crest .logo-name {
+  margin: 6px 0 0;
+  color: var(--gold-bright);
+  text-shadow: 0 0 10px rgba(247, 227, 147, 0.12);
+  font-family: "Cinzel", serif;
+  font-weight: 500;
+  font-size: 1rem;
+  /* font-style: italic; */
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-align: center;
+  max-width: 250px;
 }
 
 .crest-ring {
@@ -627,6 +646,7 @@ h2 {
   opacity: 0;
   transform: translateY(42px);
   transition: opacity 0.9s ease, transform 0.9s ease;
+  align-items: center;
 }
 
 .reveal-panel.is-visible {
@@ -639,10 +659,12 @@ h2 {
   width: min(720px, 100%);
   aspect-ratio: 12 / 7;
   margin: 0 auto;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border: 1px solid rgba(255, 214, 167, 0.18);
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.42);
+  background: radial-gradient(circle at top, rgba(255, 240, 210, 0.08), transparent 40%),
+    linear-gradient(180deg, rgba(18, 6, 14, 0.94), rgba(37, 8, 28, 0.86));
   touch-action: none;
 }
 
@@ -652,21 +674,25 @@ h2 {
   display: grid;
   place-items: center;
   align-content: center;
-  gap: 4px;
+  gap: 6px;
+  padding: 24px;
   background:
-    linear-gradient(145deg, rgba(19, 6, 13, 0.88), rgba(40, 9, 23, 0.72)),
+    linear-gradient(135deg, rgba(39, 10, 25, 0.98), rgba(74, 16, 42, 0.88)),
     url("assets/images/date-backdrop.svg") center/cover no-repeat;
-  border: 1px solid rgba(255, 225, 175, 0.12);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04), 0 18px 60px rgba(0, 0, 0, 0.26);
+  border: 1px solid rgba(255, 232, 172, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 24px 80px rgba(0, 0, 0, 0.24);
 }
 
 .reveal-date {
-  color: rgba(255, 235, 198, 0.98);
+  color: #ffe9c3;
   font-family: "Cinzel", serif;
-  font-size: clamp(2.4rem, 10vw, 4.6rem);
-  letter-spacing: 0.18em;
+  font-size: clamp(3rem, 12vw, 5.8rem);
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  text-shadow: 0 0 24px rgba(255, 195, 125, 0.32), 0 6px 20px rgba(0, 0, 0, 0.22);
+  text-shadow:
+    0 0 18px rgba(255, 216, 130, 0.35),
+    0 0 44px rgba(255, 183, 118, 0.18),
+    0 10px 26px rgba(0, 0, 0, 0.22);
   text-align: center;
 }
 
@@ -688,6 +714,86 @@ h2 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
+}
+
+.events-section {
+  padding-top: 0;
+}
+
+.events-grid {
+  position: relative;
+  display: grid;
+  gap: 24px;
+  margin-top: 30px;
+  padding-left: 26px;
+}
+
+.events-grid::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  bottom: 0;
+  width: 2px;
+  background: rgba(247, 227, 147, 0.16);
+}
+
+.event-card {
+  position: relative;
+  padding: 28px 24px 24px 42px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(28, 10, 18, 0.96), rgba(49, 12, 30, 0.88));
+  border: 1px solid rgba(255, 215, 170, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02), 0 22px 60px rgba(0, 0, 0, 0.25);
+}
+
+.event-marker {
+  position: absolute;
+  left: -1px;
+  top: 32px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(231, 72, 139, 0.95), rgba(255, 173, 208, 0.98));
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font: 700 0.75rem/1 "Cinzel", serif;
+  letter-spacing: 0.2em;
+}
+
+.event-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--gold-bright);
+  font-family: "Cinzel", serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.event-card h3 {
+  margin: 0 0 10px;
+  color: var(--cream);
+  font-family: "Cinzel", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+}
+
+.event-time {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.95rem;
+}
+
+.event-card p {
+  margin: 0;
+  color: rgba(247, 231, 214, 0.92);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 .countdown-grid div,
@@ -801,6 +907,17 @@ h2 {
   gap: clamp(28px, 7vw, 84px);
 }
 
+.venue-section .section-inner {
+  text-align: center;
+}
+
+.venue-section p,
+.venue-section h2,
+.venue-section .eyebrow {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .map-view {
   margin: 34px 0 0;
   overflow: hidden;
@@ -856,32 +973,6 @@ h2 {
   transform: translateY(0);
 }
 
-.venue-card {
-  min-height: 330px;
-  display: grid;
-  place-items: center;
-  align-content: center;
-  padding: 34px;
-  text-align: center;
-  background:
-    linear-gradient(145deg, rgba(23, 8, 18, 0.96), rgba(46, 9, 25, 0.88)),
-    url("assets/images/venue-card.svg") center/cover no-repeat;
-}
-
-.venue-card strong {
-  display: block;
-  color: var(--gold-bright);
-  font-family: "Cinzel", serif;
-  font-size: clamp(2.1rem, 5vw, 4rem);
-  line-height: 1;
-}
-
-.venue-card p {
-  margin: 16px 0 0;
-  color: var(--cream);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.55rem;
-}
 
 .details-section {
   display: grid;
@@ -976,6 +1067,82 @@ h2 {
   border-color: var(--line);
   color: var(--cream);
   box-shadow: none;
+}
+
+.rsvp-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(11, 3, 12, 0.82);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.rsvp-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-panel {
+  width: min(100%, 520px);
+  background: rgba(24, 7, 21, 0.98);
+  border: 1px solid rgba(255, 226, 172, 0.14);
+  border-radius: 28px;
+  padding: 32px 30px;
+  box-shadow: 0 28px 100px rgba(0, 0, 0, 0.45);
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--cream);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-copy {
+  margin: 0 0 20px;
+  color: rgba(255, 228, 190, 0.88);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.modal-panel .wishes-form {
+  margin: 0;
+}
+
+.modal-panel .wishes-submit {
+  width: 100%;
+}
+
+.modal-hint {
+  min-height: 1.2em;
+  margin: 12px 0 0;
+  text-align: center;
+  color: rgba(75, 23, 48, 0.66);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+}
+
+.modal-hint.is-success {
+  color: var(--gold-bright);
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 .details-note {
@@ -1292,9 +1459,6 @@ h2 {
     padding: 18px;
   }
 
-  .venue-card {
-    min-height: 270px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

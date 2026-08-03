@@ -21,35 +21,30 @@
  * in the spreadsheet: Timestamp | Name | Wishes.
  */
 
-// Email address that gets notified whenever a new wish is submitted.
-var NOTIFY_EMAIL = "fayazarif@prostem.org";
-
 function doPost(e) {
   try {
     var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var sheet = ss.getSheetByName("Wishes") || ss.insertSheet("Wishes");
+    var data = JSON.parse(e.postData.contents);
+    var type = data.type || "wish";
+    var sheetName = type === "rsvp" ? "AttendanceResponses" : "Wishes";
+    var sheet = ss.getSheetByName(sheetName) || ss.insertSheet(sheetName);
 
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["Timestamp", "Name", "Wishes"]);
+      if (type === "rsvp") {
+        sheet.appendRow(["Timestamp", "Name", "Members"]);
+      } else {
+        sheet.appendRow(["Timestamp", "Name", "Wishes"]);
+      }
     }
 
-    var data = JSON.parse(e.postData.contents);
-    var name = data.name || "";
-    var wish = data.wish || "";
-    sheet.appendRow([new Date(), name, wish]);
-
-    // Email notification each time a new wish arrives.
-    try {
-      MailApp.sendEmail({
-        to: NOTIFY_EMAIL,
-        subject: "New wedding wish from " + name,
-        body: "You received a new wish for Fayaz Arif & Sabreen\n\n"
-            + "From: " + name + "\n\n"
-            + wish + "\n\n"
-            + "View all wishes: " + ss.getUrl()
-      });
-    } catch (mailErr) {
-      // Ignore email errors so the wish is still saved to the sheet.
+    if (type === "rsvp") {
+      var name = data.name || "";
+      var members = data.members || "";
+      sheet.appendRow([new Date(), name, members]);
+    } else {
+      var name = data.name || "";
+      var wish = data.wish || "";
+      sheet.appendRow([new Date(), name, wish]);
     }
 
     return ContentService
