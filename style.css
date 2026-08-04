@@ -674,8 +674,9 @@ h2 {
   display: grid;
   place-items: center;
   align-content: center;
+  justify-items: center;
   gap: 6px;
-  padding: 24px;
+  padding: 20px 18px;
   background:
     linear-gradient(135deg, rgba(39, 10, 25, 0.98), rgba(74, 16, 42, 0.88)),
     url("assets/images/date-backdrop.svg") center/cover no-repeat;
@@ -686,16 +687,20 @@ h2 {
 .reveal-date {
   color: #ffe9c3;
   font-family: "Cinzel", serif;
-  font-size: clamp(3.1rem, 12.4vw, 6rem);
+  font-size: clamp(2.8rem, 11vw, 5.4rem);
   font-weight: 700;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   text-shadow:
     0 0 20px rgba(255, 216, 130, 0.38),
     0 0 48px rgba(255, 183, 118, 0.2),
     0 10px 28px rgba(0, 0, 0, 0.24);
   text-align: center;
-  line-height: 1.1;
+  line-height: 1.05;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .scratch-canvas {

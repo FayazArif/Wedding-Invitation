@@ -56,11 +56,15 @@ async function tryPlayMusic() {
   if (!weddingMusic || musicReady) return;
 
   try {
+    weddingMusic.volume = 0.6;
+    weddingMusic.currentTime = 0;
     await weddingMusic.play();
     musicReady = true;
     musicToggle.classList.add("is-playing");
-  } catch {
+  } catch (error) {
     musicReady = false;
+    musicToggle.classList.remove("is-playing");
+    console.warn("Audio autoplay was blocked:", error);
   }
 }
 
@@ -69,6 +73,7 @@ function toggleMusic() {
 
   if (weddingMusic.paused) {
     weddingMusic.play().then(() => {
+      weddingMusic.volume = 0.6;
       musicReady = true;
       musicToggle.classList.add("is-playing");
     }).catch(() => {
@@ -411,6 +416,7 @@ function initRsvpModal() {
 openInvite.addEventListener("click", openInvitation);
 musicToggle.addEventListener("click", toggleMusic);
 document.addEventListener("pointerdown", tryPlayMusic, { once: true });
+document.addEventListener("keydown", tryPlayMusic, { once: true });
 
 initRevealAnimations();
 initWishesForm();
