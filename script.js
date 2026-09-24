@@ -13,16 +13,23 @@ const countdown = document.getElementById("countdown");
 let musicReady = false;
 let scratchRevealed = false;
 let hasOpenedInvite = false;
+let scrollCueActive = false;
 let scrollCueTimer;
 
-function showScrollCue() {
-  if (!hasOpenedInvite) return;
+function hideScrollCue() {
+  if (!scrollCueActive) return;
 
-  body.classList.add("show-scroll-cue");
+  scrollCueActive = false;
+  body.classList.add("scroll-cue-hidden");
+  window.removeEventListener("scroll", hideScrollCue);
   window.clearTimeout(scrollCueTimer);
-  scrollCueTimer = window.setTimeout(() => {
-    body.classList.remove("show-scroll-cue");
-  }, 3000);
+}
+
+function startScrollCue() {
+  scrollCueActive = true;
+  body.classList.remove("scroll-cue-hidden");
+  window.clearTimeout(scrollCueTimer);
+  scrollCueTimer = window.setTimeout(hideScrollCue, 15000);
 }
 
 function openInvitation() {
@@ -51,12 +58,14 @@ function openInvitation() {
           body.classList.remove("curtain-opening");
           body.classList.add("invite-open");
           body.classList.add("names-revealed");
+          startScrollCue();
         }
       });
     } else {
       body.classList.remove("curtain-opening");
       body.classList.add("invite-open");
       body.classList.add("names-revealed");
+      startScrollCue();
     }
 
     invitation.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -426,7 +435,7 @@ function initRsvpModal() {
 
 openInvite.addEventListener("click", openInvitation);
 musicToggle.addEventListener("click", toggleMusic);
-window.addEventListener("scroll", showScrollCue, { passive: true });
+window.addEventListener("scroll", hideScrollCue, { passive: true });
 document.addEventListener("pointerdown", tryPlayMusic, { once: true });
 document.addEventListener("keydown", tryPlayMusic, { once: true });
 

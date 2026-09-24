@@ -534,9 +534,14 @@ body.names-revealed .cover-content > :not(.open-button) {
   z-index: 14;
 }
 
-body.show-scroll-cue .scroll-cue {
+body.invite-open .scroll-cue {
   opacity: 1;
   visibility: visible;
+}
+
+body.scroll-cue-hidden .scroll-cue {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .scroll-cue span {
