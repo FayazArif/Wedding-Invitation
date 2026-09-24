@@ -13,6 +13,17 @@ const countdown = document.getElementById("countdown");
 let musicReady = false;
 let scratchRevealed = false;
 let hasOpenedInvite = false;
+let scrollCueTimer;
+
+function showScrollCue() {
+  if (!hasOpenedInvite) return;
+
+  body.classList.add("show-scroll-cue");
+  window.clearTimeout(scrollCueTimer);
+  scrollCueTimer = window.setTimeout(() => {
+    body.classList.remove("show-scroll-cue");
+  }, 3000);
+}
 
 function openInvitation() {
   if (hasOpenedInvite) return;
@@ -415,6 +426,7 @@ function initRsvpModal() {
 
 openInvite.addEventListener("click", openInvitation);
 musicToggle.addEventListener("click", toggleMusic);
+window.addEventListener("scroll", showScrollCue, { passive: true });
 document.addEventListener("pointerdown", tryPlayMusic, { once: true });
 document.addEventListener("keydown", tryPlayMusic, { once: true });
 
